@@ -1,0 +1,427 @@
+/* CSS Reset & Global Rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ME- MOSTLY JUST COLOR VARs */
+:root {
+  --header-dark: rgb(196, 178, 232);
+  --purple: rgb(94, 47, 186); /* Dark purple from screenshots */
+  --light-purple-bg: rgb(220, 211, 239); /* Very light purple/gray background */
+  --dark-text: #333;
+  --gray-bg: #f4f4f4; /* Used for the 'Latest Books' section */
+  --white: #fff;
+  --inverted-text: #fff;
+  --books-btn-hover: rgb(131, 89, 214);
+  --footer-bg: rgb(66, 66, 80);
+  --footer-text: rgb(46, 42, 83);
+  --black: black;
+}
+/* <!-- ME- EVERYTHING YOU CAN SEE ON THE PAGE --> */
+body {
+  color: #242424;
+  background-color: #ffffff;
+}
+/*  */
+/*  #1 ME- THIS IS THE NAV BAR-- Navigation Styles */
+/*  */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    to bottom,
+    var(--light-purple-bg),
+    var(--header-dark)
+  );
+}
+
+.nav__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 24px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--purple);
+  font-weight: 500;
+}
+
+/* Standard link hover (adds underline) */
+.nav__link:hover {
+  text-decoration: underline;
+}
+
+.nav__link--primary {
+  background-color: transparent;
+  color: var(--purple);
+  border: 2px solid var(--purple);
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 300ms ease;
+}
+
+.nav__link--primary:hover {
+  text-decoration: none;
+  border: dashed 2px var(--purple);
+}
+/*  */
+/* #2 ME- THIS IS THE HERO SECTION (THE GREATING) */
+/* Hero Section */
+/*  */
+#hero {
+  background-color: var(--light-purple-bg);
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 24px;
+  background-color: var(--light-purple-bg);
+}
+
+.hero-section h1 {
+  font-size: 40px;
+  color: var(--purple);
+  margin-bottom: 16px;
+  max-width: 600px;
+}
+
+.hero-section h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.purple {
+  color: var(--purple);
+}
+
+.btn {
+  background-color: var(--purple);
+  color: var(--white);
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(105%);
+}
+
+.btn:active {
+  background-color: var(--footer-bg);
+}
+
+.hero-image {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 500px;
+  z-index: 3;
+}
+
+.main-illustration {
+  width: 100%;
+}
+
+/* next */
+/*  #3 ME- THIS IS THE HIGHLIGHT SECTION (ICONS AND WAVE)*/
+/*  */
+#highlights {
+  padding: 40px 0;
+}
+
+.section__title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.highlight__wrapper {
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  padding: 0 16px;
+}
+
+.highlight__img {
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(115, 66, 214, 0.25);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  color: var(--purple);
+  font-size: 28px;
+}
+
+.highlight__subtitle {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.highlight__para {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #242424;
+}
+
+/* 
+WAVES 
+ */
+ .container {
+padding: 0px;
+ }
+
+#highlights {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  /* padding: 0% 0; */
+  overflow: visible; /* Make sure overflow is not clipping the wave */
+}
+
+#highlights::before,
+#highlights::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 12vw;
+  background: url("assets/wave.svg"); 
+   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#highlights::before {
+  top: 1px;
+  transform: translateY(-100%);
+  z-index: 0;
+}
+
+#highlights::after {
+  bottom: -81px;
+  transform: scaleX(100%) rotate(180deg);
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  z-index: 1;
+}
+
+/*  */
+/* Featured Books Section */
+/*  */
+
+.books-section {
+  text-align: center;
+}
+
+#featured-books {
+ background-color: var(--light-purple-bg);
+   padding: 64px 0 40px;
+}
+
+#latest-books {
+ background-color: var(--white);
+   padding: 40px 0 24px;
+
+}
+
+.books-section h2 {
+  font-size: 32px;
+  margin-bottom: 32px;
+  color: var(--purple);
+}
+
+.black {
+  color: #242424;
+}
+
+/* 4-Column Layout Setup */
+.books-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 20%;
+}
+.book__info {
+  flex-grow: 1;
+}
+
+.book-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.book-card h5 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #242424;
+}
+
+.rating {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--purple);
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+
+/* --- 6. Explore More Section --- */
+.explore-section {
+  text-align: center;
+  background-color: var(--light-purple-bg);
+  padding: 24px;
+  color:var(--purple);
+
+}
+
+.exp-more-wrapper {
+  padding: 8px;
+}
+
+/* --- DONE  7. Footer --- */
+
+footer {
+  padding: 16px 0 20px;
+  background-color: var(--footer-bg);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.inverted-logo img {
+  height: 32px;
+  filter: invert(100%);
+  display: block;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 32px;
+}
+
+/* footer Home, About... */
+.footer-nav a {
+  color: var(--light-purple-bg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--white);
+}
+
+.footer-container-copy {
+  color: var(--light-purple-bg);
+  font-size: 12px;
+}
+.btn-footer-wrapper {
+  padding: 12px;
+}
+.btn-footer {
+  background-color: var(--purple);
+  color: var(--white);
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+}

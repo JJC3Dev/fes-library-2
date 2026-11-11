@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+
+    <!-- This is what I need so I can you the icons form fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/9b02b781c7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Stylesheet Link ME-TELLS HTML TO LISTEN TO STYLE.CSS-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- ME- EVERYTHING YOU CAN SEE ON THE PAGE -->
+  <body>
+    <!-- 
+   #1 ME- THIS IS THE NAV BAR
+    -->
+    <nav class="nav">
+      <div class="nav__container">
+        <a href="#">
+          <img src="assets/library.svg" alt="Library Logo" class="nav__logo" />
+        </a>
+        <ul class="nav__links">
+          <li><a href="#" class="nav__link">Home</a></li>
+          <li><a href="#" class="nav__link">Contact</a></li>
+          <li><a href="#" class="nav__link nav__link--primary">Books</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- 
+    #2 ME- THIS IS THE HERO SECTION (THE GREATING)
+    2. Hero Section -->
+    <!--  -->
+    <section id="hero" class="hero-section">
+      <h1>The USA's most awarded online library platform</h1>
+      <h3>Find your dream book with <span class="purple">Library</span></h3>
+      <a href="#books">
+        <button class="btn">Browse books</button>
+      </a>
+
+      <div class="hero-image">
+        <img
+          src="assets/Undraw_Books.svg"
+          alt="Person reading on books"
+          class="main-illustration"
+        />
+      </div>
+    </section>
+    <!-- 
+    #3 ME- THIS IS THE HIGHLIGHT SECTION (ICONS AND WAVE)
+    -->
+
+    <section id="highlights">
+      <div class="container">
+        <div class="row">
+          <h2 class="section__title">
+            Why choose <span class="purple">Library</span>?
+          </h2>
+          <div class="highlight__wrapper">
+            <div class="highlight">
+              <div class="highlight__img">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <h3 class="highlight__subtitle">Easy and Quick</h3>
+              <p class="highlight__para">
+                Get access to the book you purchased online instantly.
+              </p>
+            </div>
+            <div class="highlight">
+              <div class="highlight__img">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <h3 class="highlight__subtitle">10,000+ Books</h3>
+              <p class="highlight__para">
+                Library has books in all your favourite categories.
+              </p>
+            </div>
+            <div class="highlight">
+              <div class="highlight__img">
+                <i class="fa-solid fa-tags"></i>
+              </div>
+              <h3 class="highlight__subtitle">Affordable Pricing</h3>
+              <p class="highlight__para">
+                Get your hands on popular books for as little as $10.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 
+4. Featured Books Section 
+ -->
+    <section id="featured-books" class="books-section">
+      <h2><span class="black">Featured</span> Books</h2>
+      <div class="books-grid">
+        <!-- Book 1 -->
+        <div class="book-card">
+          <div class="book__info">
+            <img
+              src="assets/crack the coding interview.png"
+              alt="Cracking the Coding Interview"
+            />
+            <h5>Crack the Coding Interview</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$14.95 <span class="old-price">$39.95</span></p>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="book-card">
+          <div class="book__info">
+            <img src="assets/atomic habits.jpg" alt="Atomic Habits" />
+            <h5>Atomic Habits</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$12.95</p>
+        </div>
+        <!-- Book 3 -->
+        <div class="book-card">
+          <div class="book__info">
+            <img src="assets/david goggins.jpeg" alt="Can't Hurt Me" />
+            <h5>Can't Hurt Me</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$28.95</p>
+        </div>
+        <!-- Book 4 -->
+        <div class="book-card">
+          <div class="book__info">
+            <img src="assets/deep work.jpeg" alt="Deep Work" />
+            <h5>Deep Work</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$22.95 <span class="old-price">$39.95</span></p>
+        </div>
+      </div>
+    </section>
+    <!--  -->
+    <!-- Latest Books -->
+    <!--  -->
+    <section id="latest-books" class="books-section">
+      <h2><span class="black">Latest </span>Books</h2>
+      <div class="books-grid">
+        <!-- Top Row -->
+        <div class="book-card">
+          <div class="book__info">
+
+            <img src="assets/book-1.jpeg" alt="The 10X Rule" />
+            <h5>The 10X Rule</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$59.95</p>
+        </div>
+        <!-- Bottom Row -->
+        <div class="book-card">
+          <div class="book__info">
+
+            <img src="assets/book-2.jpeg" alt="Be obsessed or be average" />
+            <h5>Be obsessed or be average</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$59.95</p>
+        </div>
+        <!-- ... -->
+        <div class="book-card">
+          <div class="book__info">
+
+            <img src="assets/book-3.jpeg" alt="Rich dad Poor dad" />
+            <h5>Rich dad Poor dad</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$59.95</p>
+        </div>
+
+        <div class="book-card">
+          <div class="book__info">
+
+            <img src="assets/book-4.jpeg" alt="Cashflow quadrant" />
+            <h5>Cashflow quadrant</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$59.95</p>
+        </div>
+
+        <div class="book-card">
+          <div class="book__info">
+            
+            <img src="assets/book-5.jpeg" alt="The 48 laws of Power" />
+            <h5>The 48 laws of Power</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$59.95</p>
+        </div>
+
+        <div class="book-card">
+          <div class="book__info">
+
+            <img src="assets/book-6.jpeg" alt="5 second rule" />
+            <h5>5 second rule</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$59.95</p>
+        </div>
+
+        <div class="book-card">
+          <div class="book__info">
+
+            <img src="assets/book-7.jpg" alt="Your next 5 moves" />
+            <h5>Your next 5 moves</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$59.95</p>
+        </div>
+
+        <div class="book-card">
+          <div class="book__info">
+
+            <img src="assets/book-8.jpeg" alt="Mastery" />
+            <h5>Mastery</h5>
+          </div>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">$59.95</p>
+        </div>
+      </div>
+    </section>
+
+
+<!-- 6. Explore More / Call to Action Section -->
+    <section id="explore-more" class="explore-section">
+      <div class="exp-more-wrapper">
+
+        <h2><span class="black">Explore more </span>Books</h2>
+      </div>
+      <div class="btn-footer-wrapper">
+
+        <button class="btn-footer">Browse books</button>
+      </div>
+    </section>
+
+   <!-- 7. Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="inverted-logo">
+      <img id="in-logo" src="assets/Library.svg" alt="Library Logo White" />
+    </div>
+
+    <nav class="footer-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#books">Books</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="footer-container-copy">
+      <p>© 2026 Library. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

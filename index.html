@@ -33,12 +33,36 @@
           <img src="assets/library.svg" alt="Library Logo" class="nav__logo" />
         </a>
         <ul class="nav__links">
-          <li><a href="#" class="nav__link">Home</a></li>
-          <li><a href="#" class="nav__link">Contact</a></li>
-          <li><a href="#" class="nav__link nav__link--primary">Books</a></li>
+          <li><a href="#hero" class="nav__link">Home</a></li>
+          <li><a href="" class="nav__link nav__link--disabled">Contact</a></li>
+          <li><a href="#featured-books" class="nav__link nav__link--primary">Books</a></li>
         </ul>
+
+        <button class="menu__btn" onclick="openMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </nav>
+
+    <div class="menu">
+      <button class="menu__btn menu__close" onclick="closeMenu()">
+        <i class="fas fa-times"></i>
+      </button>
+      <a href="#hero" class="menu__link" onclick="closeMenu()">Home</a>
+      <a href="#" class="menu__link nav__link--disabled" onclick="">Contact🚫</a>
+      <a href="#featured-books" class="menu__link" onclick="closeMenu()"
+        >Books</a
+      >
+    </div>
+    <script>
+      function openMenu() {
+        document.body.classList.add("menu--open");
+      }
+      function closeMenu() {
+        document.body.classList.remove("menu--open");
+      }
+    </script>
+
     <!-- 
     #2 ME- THIS IS THE HERO SECTION (THE GREATING)
     2. Hero Section -->
@@ -46,7 +70,7 @@
     <section id="hero" class="hero-section">
       <h1>The USA's most awarded online library platform</h1>
       <h3>Find your dream book with <span class="purple">Library</span></h3>
-      <a href="#books">
+      <a href="#featured-books">
         <button class="btn">Browse books</button>
       </a>
 
@@ -100,6 +124,7 @@
         </div>
       </div>
     </section>
+    
     <!-- 
 4. Featured Books Section 
  -->
@@ -109,11 +134,13 @@
         <!-- Book 1 -->
         <div class="book-card">
           <div class="book__info">
-            <img
-              src="assets/crack the coding interview.png"
-              alt="Cracking the Coding Interview"
-            />
-            <h5>Crack the Coding Interview</h5>
+            <figure class="book__img--wrapper">
+              <img
+                src="assets/crack the coding interview.png"
+                alt="Cracking the Coding Interview"
+              />
+            </figure>
+            <h5 class="book__title">Crack the Coding Interview</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$14.95 <span class="old-price">$39.95</span></p>
@@ -122,8 +149,10 @@
         <!-- Book 2 -->
         <div class="book-card">
           <div class="book__info">
-            <img src="assets/atomic habits.jpg" alt="Atomic Habits" />
-            <h5>Atomic Habits</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/atomic habits.jpg" alt="Atomic Habits" />
+            </figure>
+            <h5 class="book__title">Atomic Habits</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$12.95</p>
@@ -131,8 +160,10 @@
         <!-- Book 3 -->
         <div class="book-card">
           <div class="book__info">
-            <img src="assets/david goggins.jpeg" alt="Can't Hurt Me" />
-            <h5>Can't Hurt Me</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/david goggins.jpeg" alt="Can't Hurt Me" />
+            </figure>
+            <h5 class="book__title">Can't Hurt Me</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$28.95</p>
@@ -140,8 +171,10 @@
         <!-- Book 4 -->
         <div class="book-card">
           <div class="book__info">
-            <img src="assets/deep work.jpeg" alt="Deep Work" />
-            <h5>Deep Work</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/deep work.jpeg" alt="Deep Work" />
+            </figure>
+            <h5 class="book__title">Deep Work</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$22.95 <span class="old-price">$39.95</span></p>
@@ -157,9 +190,10 @@
         <!-- Top Row -->
         <div class="book-card">
           <div class="book__info">
-
-            <img src="assets/book-1.jpeg" alt="The 10X Rule" />
-            <h5>The 10X Rule</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/book-1.jpeg" alt="The 10X Rule" />
+            </figure>
+            <h5 class="book__title">The 10X Rule</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$59.95</p>
@@ -167,9 +201,10 @@
         <!-- Bottom Row -->
         <div class="book-card">
           <div class="book__info">
-
-            <img src="assets/book-2.jpeg" alt="Be obsessed or be average" />
-            <h5>Be obsessed or be average</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/book-2.jpeg" alt="Be obsessed or be average" />
+            </figure>
+            <h5 class="book__title">Be obsessed or be average</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$59.95</p>
@@ -177,9 +212,10 @@
         <!-- ... -->
         <div class="book-card">
           <div class="book__info">
-
-            <img src="assets/book-3.jpeg" alt="Rich dad Poor dad" />
-            <h5>Rich dad Poor dad</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/book-3.jpeg" alt="Rich dad Poor dad" />
+            </figure>
+            <h5 class="book__title">Rich dad Poor dad</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$59.95</p>
@@ -187,9 +223,10 @@
 
         <div class="book-card">
           <div class="book__info">
-
-            <img src="assets/book-4.jpeg" alt="Cashflow quadrant" />
-            <h5>Cashflow quadrant</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/book-4.jpeg" alt="Cashflow quadrant" />
+            </figure>
+            <h5 class="book__title">Cashflow quadrant</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$59.95</p>
@@ -197,9 +234,10 @@
 
         <div class="book-card">
           <div class="book__info">
-            
-            <img src="assets/book-5.jpeg" alt="The 48 laws of Power" />
-            <h5>The 48 laws of Power</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/book-5.jpeg" alt="The 48 laws of Power" />
+            </figure>
+            <h5 class="book__title">The 48 laws of Power</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$59.95</p>
@@ -207,9 +245,10 @@
 
         <div class="book-card">
           <div class="book__info">
-
-            <img src="assets/book-6.jpeg" alt="5 second rule" />
-            <h5>5 second rule</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/book-6.jpeg" alt="5 second rule" />
+            </figure>
+            <h5 class="book__title">5 second rule</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$59.95</p>
@@ -217,9 +256,10 @@
 
         <div class="book-card">
           <div class="book__info">
-
-            <img src="assets/book-7.jpg" alt="Your next 5 moves" />
-            <h5>Your next 5 moves</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/book-7.jpg" alt="Your next 5 moves" />
+            </figure>
+            <h5 class="book__title">Your next 5 moves</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$59.95</p>
@@ -227,9 +267,10 @@
 
         <div class="book-card">
           <div class="book__info">
-
-            <img src="assets/book-8.jpeg" alt="Mastery" />
-            <h5>Mastery</h5>
+            <figure class="book__img--wrapper">
+              <img src="assets/book-8.jpeg" alt="Mastery" />
+            </figure>
+            <h5 class="book__title">Mastery</h5>
           </div>
           <p class="rating">⭐⭐⭐⭐⭐</p>
           <p class="price">$59.95</p>
@@ -237,35 +278,36 @@
       </div>
     </section>
 
-
-<!-- 6. Explore More / Call to Action Section -->
+    <!-- 6. Explore More / Call to Action Section -->
     <section id="explore-more" class="explore-section">
       <div class="exp-more-wrapper">
-
         <h2><span class="black">Explore more </span>Books</h2>
       </div>
       <div class="btn-footer-wrapper">
-
-        <button class="btn-footer">Browse books</button>
+        <a href="#latest-books">
+          <button class="btn-footer">Browse books</button>
+        </a>
       </div>
     </section>
 
-   <!-- 7. Footer -->
-<footer>
-  <div class="footer-container">
-    <div class="inverted-logo">
-      <img id="in-logo" src="assets/Library.svg" alt="Library Logo White" />
-    </div>
+    <!-- 7. Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="inverted-logo">
+          <img id="in-logo" src="assets/Library.svg" alt="Library Logo White" />
+        </div>
 
-    <nav class="footer-nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#books">Books</a>
-      <a href="#contact">Contact</a>
-    </nav>
+        <nav class="footer-nav">
+          <a href="#hero">Home</a>
+          <a href="#highlights">About</a>
+          <a href="#featured-books">Books</a>
+          <a href="#contact" class="nav__link nav__link--disabled">Contact</a>
+        </nav>
 
-    <div class="footer-container-copy">
-      <p>© 2026 Library. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+        <div class="footer-container-copy">
+          <p>© 2026 Library. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

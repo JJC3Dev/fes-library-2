@@ -6,6 +6,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  scroll-padding-top: 80px; /* Adjust this to match your navigation bar's height */
+}
+
 /* ME- MOSTLY JUST COLOR VARs */
 :root {
   --header-dark: rgb(196, 178, 232);
@@ -56,6 +60,7 @@ body {
   width: 120px;
   height: auto;
   display: block;
+  cursor: default;
 }
 
 .nav__links {
@@ -103,6 +108,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 40px 24px;
+  padding-bottom:15vh;
   background-color: var(--light-purple-bg);
 }
 
@@ -157,7 +163,10 @@ body {
 /*  #3 ME- THIS IS THE HIGHLIGHT SECTION (ICONS AND WAVE)*/
 /*  */
 #highlights {
-  padding: 40px 0;
+  padding: 40px 0px;
+}
+
+.row {
 }
 
 .section__title {
@@ -212,9 +221,14 @@ body {
 /* 
 WAVES 
  */
- .container {
-padding: 0px;
- }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 #highlights {
   position: relative;
@@ -222,32 +236,35 @@ padding: 0px;
   align-items: center;
   background-color: var(--white);
   /* padding: 0% 0; */
-  overflow: visible; /* Make sure overflow is not clipping the wave */
+  overflow: visible;
+  /* Make sure overflow is not clipping the wave */
 }
 
 #highlights::before,
 #highlights::after {
-  content: "";
+content: "";
   position: absolute;
   left: 0;
   width: 100%;
-  height: 12vw;
-  background: url("assets/wave.svg"); 
-   background-size: cover;
+  height: 10vh; 
+  background: url("assets/wave.svg");
+  background-size: 100% auto; 
   background-repeat: no-repeat;
 }
 
 #highlights::before {
-  top: 1px;
+  background-position: center top;
+  bottom: calc(617px);
+  filter:invert(100%);
   transform: translateY(-100%);
-  z-index: 0;
+  z-index: 5;
 }
 
 #highlights::after {
-  bottom: -81px;
   transform: scaleX(100%) rotate(180deg);
-  /* background-size: cover;
-  background-repeat: no-repeat; */
+   bottom: -10vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   z-index: 1;
 }
 
@@ -260,14 +277,19 @@ padding: 0px;
 }
 
 #featured-books {
- background-color: var(--light-purple-bg);
-   padding: 64px 0 40px;
+  background-color: var(--light-purple-bg);
+  padding: 64px 0 40px;
 }
 
-#latest-books {
- background-color: var(--white);
-   padding: 40px 0 24px;
+.book__title:hover {
+  text-decoration: underline;
+  cursor: not-allowed;
+}
 
+
+#latest-books {
+  background-color: var(--white);
+  padding: 40px 0 24px;
 }
 
 .books-section h2 {
@@ -284,7 +306,7 @@ padding: 0px;
 .books-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
@@ -296,7 +318,8 @@ padding: 0px;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 20%;
+  width: 22%;
+  padding:8px;
 }
 .book__info {
   flex-grow: 1;
@@ -310,6 +333,21 @@ padding: 0px;
   border-radius: 8px;
   margin-bottom: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.book__img--wrapper {
+  overflow: hidden;
+  border-radius: 4px; /* optional: keeps your rounded corners clipped too */
+}
+
+.book__img--wrapper img {
+  display: block; /* removes tiny gap underneath images */
+  transition: transform 0.3s ease;
+}
+
+.book__img--wrapper:hover img {
+  transform: scale(1.02);
+  cursor: not-allowed;
 }
 
 .book-card h5 {
@@ -336,14 +374,12 @@ padding: 0px;
   margin-left: 6px;
 }
 
-
 /* --- 6. Explore More Section --- */
 .explore-section {
   text-align: center;
   background-color: var(--light-purple-bg);
   padding: 24px;
-  color:var(--purple);
-
+  color: var(--purple);
 }
 
 .exp-more-wrapper {
@@ -368,7 +404,7 @@ footer {
 
 .inverted-logo img {
   height: 32px;
-  filter: invert(100%);
+  filter: grayscale(100%) invert(100%);
   display: block;
 }
 
@@ -386,6 +422,7 @@ footer {
 
 .footer-nav a:hover {
   color: var(--white);
+  text-decoration: underline;
 }
 
 .footer-container-copy {
@@ -406,22 +443,85 @@ footer {
   transition: all 300ms ease;
 }
 
-
-
+.btn-footer:hover {
+  scale:102%;
+}
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 900px) {
-  .features-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 1024px) {
+  .book-card {
+    width: calc(33.33% - 16px);
   }
-
-  .books-grid {
-    grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 768px) {
+  .highlight__wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .highlight {
+    width: 100%;
+  }
+  .book-card {
+    width: calc(50% - 12px);
+  }
+  .hero-section h1 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 480px) {
+  .book-card {
+    width: 100%;
   }
 }
 
-@media (max-width: 600px) {
-  .books-grid {
-    grid-template-columns: 1fr;
+.menu__btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.menu {
+  position: fixed;
+  inset: 0;
+  background: #242424;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 300ms ease;
+  z-index: 100;
+}
+.menu--open .menu {
+  visibility: visible;
+  opacity: 1;
+}
+.menu__link {
+  color: white;
+  font-size: 32px;
+  text-decoration: none;
+}
+
+.nav__link--disabled {
+   cursor: not-allowed;
+}
+
+.menu__close {
+  display: block;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: white;
+}
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+  .menu__btn {
+    display: block;
   }
 }

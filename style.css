@@ -7,7 +7,9 @@
 }
 
 html {
-  scroll-padding-top: 80px; /* Adjust this to match your navigation bar's height */
+  /* scroll-padding-top: 120px; */
+  /* scroll-padding-top: 80px; */
+   /* Adjust this to match your navigation bar's height */
 }
 
 /* ME- MOSTLY JUST COLOR VARs */
@@ -82,6 +84,7 @@ body {
 }
 
 .nav__link--primary {
+ 
   background-color: transparent;
   color: var(--purple);
   border: 2px solid var(--purple);
@@ -99,10 +102,12 @@ body {
 /* Hero Section */
 /*  */
 #hero {
+   scroll-margin-top: 80px;
   background-color: var(--light-purple-bg);
 }
 
 .hero-section {
+   
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,6 +168,7 @@ body {
 /*  #3 ME- THIS IS THE HIGHLIGHT SECTION (ICONS AND WAVE)*/
 /*  */
 #highlights {
+  scroll-margin-top: 80px;
   padding: 40px 0px;
 }
 
@@ -271,6 +277,7 @@ WAVES
 }
 
 #featured-books {
+   scroll-margin-top: -44px;
   background-color: var(--light-purple-bg);
   padding: calc(12vw + 40px) 0 40px;
 }
@@ -282,8 +289,9 @@ WAVES
 
 
 #latest-books {
+   scroll-margin-top: 80px;
   background-color: var(--white);
-  padding: 40px 0 24px;
+  padding: 32px 0 24px;
 }
 
 .books-section h2 {
